@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { SignupPage, LoginPage, HomePage, ProfilePage, SettingsPage } from './pages';
 import { useAuthStore } from './store/useAuthStore.js';
+import { useThemeStore } from './store/useThemeStore.js';
 
 import { Loader } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
@@ -10,21 +11,23 @@ import { Toaster } from 'react-hot-toast';
 const App = () => {
 
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+  const { theme } = useThemeStore();
 
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
 
   console.log(authUser);
+  console.log(theme)
 
   if (isCheckingAuth && !authUser) return (
-    <div className='w-screen h-screen flex items-center justify-center'>
+    <div className='w-screen h-screen flex items-center justify-center bg-[#171212]'>
       <Loader className='size-10 animate-spin' />
     </div>
   )
 
   return (
-    <div>
+    <div data-theme={ theme }>
       <Navbar />
 
       <Routes>
