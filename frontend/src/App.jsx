@@ -17,8 +17,7 @@ const App = () => {
     checkAuth();
   }, [checkAuth]);
 
-  console.log(authUser);
-  console.log(theme)
+  // console.log(authUser);
 
   if (isCheckingAuth && !authUser) return (
     <div className='w-screen h-screen flex items-center justify-center bg-[#171212]'>
