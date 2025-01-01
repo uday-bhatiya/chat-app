@@ -91,7 +91,10 @@ export const useAuthStore = create((set, get) => ({
     const socket = io(BASE_URL, {
       query: {
         userId: authUser._id
-      }
+      },
+      reconnection: true,
+      reconnectionAttempts: 10, // Adjust as needed
+      reconnectionDelay: 1000,
     });
     socket.connect();
 
