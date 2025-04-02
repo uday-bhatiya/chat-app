@@ -10,12 +10,15 @@ import authRoutes from './src/routes/auth.routes.js';
 
 import messageRoutes from './src/routes/message.routes.js';
 import path from 'path';
-// import { fileURLToPath } from 'url';
 
 dotenv.config();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  credentials: true
+}))
 
 const __dirname = path.resolve();
 
