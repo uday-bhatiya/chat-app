@@ -31,17 +31,19 @@ A real-time chat application built using the MERN stack (MongoDB, Express.js, Re
 ---
 ## **📦 Installation**
 1. Clone the repo
-git clone https://github.com/uday-bhatiya/chat-app.git
+```git clone https://github.com/uday-bhatiya/chat-app.git
 cd chat-app
+```
 
+2. Setup environment variables
+   Create a `.env` file in the `backend/` directory and add:
 
-
-
-
-
-
-
-
-
-
-  
+```
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+3. Install dependencies
+4. Run the app
